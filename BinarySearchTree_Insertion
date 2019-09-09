@@ -1,0 +1,17 @@
+    Node * insert(Node * root, int data) {
+       if (root==NULL || root->data==data)
+       {
+           Node *temp=new Node(data);
+           temp->data=data;
+           temp->left=NULL;
+           temp->right=NULL;
+           return temp;
+       }
+        if(root->data>data)
+        root->left=insert(root->left,data);
+        else if(root->data<data)
+        root->right=insert(root->right,data);
+
+
+        return root;
+    }
