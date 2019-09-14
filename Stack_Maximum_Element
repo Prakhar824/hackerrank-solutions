@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <stack>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    stack<int> s;
+     
+    int n,o;
+    int m,i;
+    cin>>n;
+    for (i=0;i<n;i++)
+    {
+        cin>>m;
+        switch(m){
+        
+        case 1:
+        cin>>o;
+        if(s.empty())
+        s.push(o);
+        else 
+        s.push(max(o,s.top()));
+        break;
+        case 2:
+        s.pop();
+        break;
+        
+        case 3:
+        cout<<s.top()<<endl;
+        break;
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to 
+STDOUT */   
+    return 0;
+}
+
